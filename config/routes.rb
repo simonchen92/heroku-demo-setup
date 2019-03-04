@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
   # Cafeteria Resource Routes
   get '/ingredients' => 'ingredients#index'
+  get '/ingredients/:id' => 'ingredients#show'
 end
