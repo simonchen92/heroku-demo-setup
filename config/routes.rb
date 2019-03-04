@@ -19,10 +19,12 @@ Rails.application.routes.draw do
   # delete '/books/:id' => 'books#destroy'
 
   # Hospital Resource Routes
-  get '/patients' => 'patients#index'
-  get '/patients/:id' => 'patients#show'
-  post '/patients' => 'patients#create'
-  patch '/patients/:id' => 'patients#update'
+  resources :patients, except: %i[new edit]
+  # get '/patients' => 'patients#index'
+  # get '/patients/:id' => 'patients#show'
+  # post '/patients' => 'patients#create'
+  # patch '/patients/:id' => 'patients#update'
+  # delete '/patients/:id' => 'patients#destroy'
 
   # Cafeteria Resource Routes
   get '/ingredients' => 'ingredients#index'
