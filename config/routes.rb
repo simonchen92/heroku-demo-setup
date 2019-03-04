@@ -15,4 +15,7 @@ Rails.application.routes.draw do
 
   # Hospital Resource Routes
   get '/patients' => 'patients#index'
+
+  # Cafeteria Resource Routes
+  get '/ingredients' => 'ingredients#index'
 end
