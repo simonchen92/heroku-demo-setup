@@ -1,11 +1,13 @@
 class IngredientsController < ApplicationController
+  before_action :set_ingredient, only: %i[show update destroy]
+
   def index
     @ingredients = Ingredient.all
     render json: @ingredients
   end
 
   def show
-    @ingredient = Ingredient.find(params[:id])
+    # @ingredient = Ingredient.find(params[:id])
     render json: @ingredient
   end
 
@@ -20,7 +22,7 @@ class IngredientsController < ApplicationController
   end
 
   def update
-    @ingredient = Ingredient.find(params[:id])
+    # @ingredient = Ingredient.find(params[:id])
 
     if @ingredient.update(ingredient_params)
       render json: @ingredient
@@ -29,7 +31,16 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def destroy
+    # @ingredient = Ingredient.find(params[:id])
+    @ingredient.destroy
+  end
+
   def ingredient_params
     params.require(:ingredient).permit(:name, :unit)
+  end
+
+  def set_ingredient
+    @ingredient = Ingredient.find(params[:id])
   end
 end

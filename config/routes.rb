@@ -27,8 +27,10 @@ Rails.application.routes.draw do
   # delete '/patients/:id' => 'patients#destroy'
 
   # Cafeteria Resource Routes
-  get '/ingredients' => 'ingredients#index'
-  get '/ingredients/:id' => 'ingredients#show'
-  post '/ingredients' => 'ingredients#create'
-  patch '/ingredients/:id' => 'ingredients#update'
+  resources :ingredients, except: %i[new edit]
+  # get '/ingredients' => 'ingredients#index'
+  # get '/ingredients/:id' => 'ingredients#show'
+  # post '/ingredients' => 'ingredients#create'
+  # patch '/ingredients/:id' => 'ingredients#update'
+  # delete '/ingredients/:id' => 'ingredients#destroy'
 end
