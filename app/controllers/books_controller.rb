@@ -19,6 +19,16 @@ class BooksController < ApplicationController
     end
   end
 
+  def update
+    @book = Book.find(params[:id])
+
+    if @book.update(book_params)
+      render json: @book
+    else
+      render json: @book.errors, status: :unprocessable_entity
+    end
+  end
+
   def book_params
     params.require(:book).permit(:title, :author)
   end
