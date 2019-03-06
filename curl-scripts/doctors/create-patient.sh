@@ -6,8 +6,8 @@ curl "http://localhost:4741/doctors" \
     "doctor": {
       "first_name": "'"${FIRST}"'",
       "last_name": "'"${LAST}"'",
-      "diagnosis": "'"${DIAGNOSIS}"'",
-      "born_on": "'"${BORN}"'"
+      "zip_code": "'"${ZIP}"'",
+      "specialty": "'"${SPECIALTY}"'"
     }
   }'
 
